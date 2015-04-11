@@ -14,5 +14,10 @@
     "inquirer"
   ],
   "author": "Jakob Westhoff <jakob@westhoffswelt.de> (http://westhoffswelt.de)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "cli-width": "^1.0.1",
+    "inquirer": "^0.8.2"
+  }
 }
