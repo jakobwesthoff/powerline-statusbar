@@ -18,7 +18,8 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "cli-width": "^1.0.1",
-    "inquirer": "^0.8.2"
+    "inquirer": "^0.8.2",
+    "lodash": "^3.6.0"
   },
   "devDependencies": {
     "babel": "^5.0.12"
