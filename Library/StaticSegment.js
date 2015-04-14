@@ -43,12 +43,12 @@ export default class StaticSegment {
     }
 
     render(nextSegment, maxFillSpace = null) {
-        var content = this.provideContent();
+        var content = ` ${this.provideContent()} `;
         var format = this.createContentFormatter();
         var output;
         if (this.options.fill && maxFillSpace !== null) {
             output = format(
-                this.padToFill(content, maxFillSpace - 1)
+                this.padToFill(content, maxFillSpace - (nextSegment === null ? 0 : 1))
             ) + this.renderSeparator(nextSegment);
         } else {
             output = format(content) + this.renderSeparator(nextSegment);
