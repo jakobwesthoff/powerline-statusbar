@@ -35,7 +35,7 @@ By default every segment supports the following options:
     background: "yellow", 
     
     // Either a console color name, or a hex value (eg. #ffff00)
-    foreground: "black", // Same as background
+    foreground: "black",
    
     // Fill this seperator to take all the console width after rendering all
     // segments. Only ONE segment is allowed to have this set to true.
