@@ -6,6 +6,10 @@
   "scripts": {
     "prepublish": "rm -rf ./Distribution/* && node node_modules/.bin/babel -d Distribution index.js && node node_modules/.bin/babel -d Distribution/Library Library"
   },
+  "repository" : { 
+      "type" : "git",
+      "url" : "https://github.com/jakobwesthoff/powerline-statusbar.git"
+  },
   "keywords": [
     "cli",
     "powerline",
