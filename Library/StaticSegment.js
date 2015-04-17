@@ -1,25 +1,21 @@
-import chalk from "chalk";
+import crayon from "crayon-terminal";
 import _ from "lodash";
 
 import {upperCaseFirst} from "./Utillities.js";
 
 var separator = {
-    compatible: {
-        normal: '',
-        thin: '\u276f'
-    },
-    patched: {
-        normal: '\u2B80',
-        thin: '\u2B81'
-    }
+    none: "",
+    normal: "\ue0b0",
+    thin: "\ue0b1",
+    reverse: "\ue0b2",
+    "reverse-thin": "\ue0b3"
 };
 
 var defaultOptions = {
     background: "yellow",
     foreground: "black",
     fill: false,
-    separator: "normal",
-    fontUsage: "compatible"
+    separator: "normal"
 };
 
 export default class StaticSegment {
@@ -37,7 +33,7 @@ export default class StaticSegment {
     }
 
     calculateNeededScreenspace(nextSegment) {
-        return chalk.stripColor(
+        return crayon.stripColor(
             this.render(nextSegment)
         ).length;
     }
@@ -66,7 +62,27 @@ export default class StaticSegment {
     }
 
     createFormatter(foreground, background) {
-        return chalk[foreground.toLowerCase()]["bg" + upperCaseFirst(background)];
+        var formatter = crayon;
+
+        switch(true) {
+            case foreground.indexOf("#") === 0:
+                formatter = formatter.foreground(foreground);
+            break;
+            default:
+                formatter = formatter[foreground.toLowerCase()];
+            break;
+        }
+
+        switch(true) {
+            case background.indexOf("#") === 0:
+                formatter = formatter.background(background);
+                break;
+            default:
+                formatter = formatter["bg" + upperCaseFirst(background)];
+                break;
+        }
+
+        return formatter;
     }
 
     createContentFormatter() {
@@ -74,24 +90,22 @@ export default class StaticSegment {
     }
 
     createSeparatorFormatter(nextSegment) {
-        if (this.options.separator === "thin") {
-            return this.createFormatter(this.options.foreground, this.options.background);
-        } else {
-            return this.createFormatter(this.options.background, nextSegment.background);
+        switch(this.options.separator.toLowerCase()) {
+            case "none":
+            case "thin":
+            case "reverse-thin":
+                return this.createFormatter(this.options.foreground, this.options.background);
+            case "normal":
+                return this.createFormatter(this.options.background, nextSegment.background);
+            case "reverse":
+                return this.createFormatter(nextSegment.background, this.options.background);
+            default:
+                throw new Error("Unsupported separator style: " + this.options.separator);
         }
     }
 
     getSeparatorCharacter() {
-        switch(this.options.separator.toLowerCase()) {
-            case "none":
-                return "";
-            case "normal":
-                return separator[this.options.fontUsage].normal;
-            case "thin":
-                return separator[this.options.fontUsage].thin;
-            default:
-                throw new Error("Unknown separator style: " + this.options.separator);
-        }
+        return separator[this.options.separator.toLowerCase()];
     }
 
     renderSeparator(nextSegment) {
