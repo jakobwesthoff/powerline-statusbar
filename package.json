@@ -2,9 +2,9 @@
   "name": "powerline-statusbar",
   "version": "0.1.0",
   "description": "A powerline inspired statusbar for node cli applications",
-  "main": "index.js",
+  "main": "Distribution/index.js",
   "scripts": {
-    "prepublish": "node node_modules/.bin/babel -d Distribution index.js && node node_modules/.bin/babel -d Distribution/Library Library"
+    "prepublish": "rm -rf ./Distribution/* && node node_modules/.bin/babel -d Distribution index.js && node node_modules/.bin/babel -d Distribution/Library Library"
   },
   "keywords": [
     "cli",
@@ -18,7 +18,8 @@
   "dependencies": {
     "cli-width": "^1.0.1",
     "crayon-terminal": "^3.0.0",
-    "lodash": "^3.6.0"
+    "lodash": "^3.6.0",
+    "moment": "^2.10.2"
   },
   "devDependencies": {
     "babel": "^5.0.12"
