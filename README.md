@@ -29,7 +29,7 @@ by different segments can be easily seen in their corresponding code.
 
 By default every segment supports the following options: 
 
-```json
+```javascript
 {
     // Either a console color name, or a hex value (eg. #ffff00)
     background: "yellow", 
