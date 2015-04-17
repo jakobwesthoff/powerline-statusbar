@@ -1,7 +1,7 @@
 import crayon from "crayon-terminal";
 import _ from "lodash";
 
-import {upperCaseFirst} from "./Utillities.js";
+import {upperCaseFirst} from "../Utillities.js";
 
 var separator = {
     none: "",
@@ -18,9 +18,8 @@ var defaultOptions = {
     separator: "normal"
 };
 
-export default class StaticSegment {
-    constructor(content, options) {
-        this.content = content;
+export default class BaseSegment {
+    constructor(options) {
         this.options = _.merge({}, defaultOptions, options);
     }
 
@@ -119,6 +118,6 @@ export default class StaticSegment {
     }
 
     provideContent() {
-        return this.content;
+        throw new Error("Abstract method: provideContent");
     }
 }
