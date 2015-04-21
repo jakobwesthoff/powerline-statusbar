@@ -65,6 +65,6 @@ describe("PowerlineStatus", function() {
 
     it("should ensure cliwidths default is not 0", function() {
         expect(typeof cliwidth.defaultWidth).toEqual("number");
-        expect(cliwidth.defaultWidth).toNotEqual(0);
+        expect(cliwidth.defaultWidth).not.toEqual(0);
     });
 });

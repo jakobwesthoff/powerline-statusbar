@@ -4,8 +4,12 @@
   "description": "A powerline inspired statusbar for node cli applications",
   "main": "Distribution/index.js",
   "scripts": {
-    "prepublish": "rm -rf ./Distribution/* && node node_modules/.bin/babel -d Distribution index.js && node node_modules/.bin/babel -d Distribution/Library Library && semantic-release pre",
-    "test": "node node_modules/.bin/jest",
+    "prepublish": "npm run clean && npm run babel:index && npm run babel:library && semantic-release pre",
+    "clean": "rm -rf ./Distribution/*",
+    "babel:index": "node node_modules/.bin/babel -d Distribution index.js",
+    "babel:library": "node node_modules/.bin/babel -d Distribution/Library Library",
+    "babel:specs": "node node_modules/.bin/babel --copy-files -d Distribution/Specification Specification",
+    "test": "npm run clean && npm run babel:index && npm run babel:library && npm run babel:specs && cd Distribution && ../node_modules/.bin/jasmine JASMINE_CONFIG_PATH=Specification/Support/jasmine.json; cd ..",
     "postpublish": "semantic-release post"
   },
   "repository": {
@@ -31,22 +35,8 @@
     "ansi-regex": "^1.1.1",
     "babel": "^5.0.12",
     "babel-jest": "^5.0.1",
-    "jest-cli": "^0.4.0",
+    "jasmine": "^2.2.1",
     "semantic-release": "^3.0.5",
     "strip-ansi": "^2.0.1"
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testDirectoryName": "Specification",
-    "testFileExtensions": [
-      "spec.js"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "unmockedModulePathPatterns": [
-      ".*"
-    ]
   }
 }
