@@ -31,10 +31,12 @@ By default every segment supports the following options:
 
 ```javascript
 {
-    // Either a console color name, or a hex value (eg. #ffff00)
+    // Either a console color name, a hex value (eg. #ffff00) or a Ansi color
+    // code (eg. 63)
     background: "yellow", 
     
-    // Either a console color name, or a hex value (eg. #ffff00)
+    // Either a console color name, a hex value (eg. #ffff00) or a Ansi color
+    // code (eg. 63)
     foreground: "black",
    
     // Fill this seperator to take all the console width after rendering all
@@ -46,3 +48,9 @@ By default every segment supports the following options:
     separator: "normal"
 }
 ```
+
+## Themes
+
+To ease the usage within differently colored environments `Palettes` are available
+containing the ansi-codes for different color themes. They are stored inside
+`Library/Palette` and can be accessed using `Powerline.palette.<PaletteName>`.
