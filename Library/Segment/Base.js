@@ -61,28 +61,7 @@ export default class BaseSegment {
     }
 
     createFormatter(foreground, background) {
-        var formatter = crayon;
-
-        switch(true) {
-            case foreground.indexOf("#") === 0:
-            case parseInt(foreground).toString() === foreground:
-                formatter = formatter.foreground(foreground);
-            break;
-            default:
-                formatter = formatter[foreground.toLowerCase()];
-            break;
-        }
-
-        switch(true) {
-            case background.indexOf("#") === 0:
-                formatter = formatter.background(background);
-                break;
-            default:
-                formatter = formatter["bg" + upperCaseFirst(background)];
-                break;
-        }
-
-        return formatter;
+        return crayon.foreground(foreground.toLowerCase()).background(background.toLowerCase());
     }
 
     createContentFormatter() {

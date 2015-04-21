@@ -31,19 +31,19 @@ By default every segment supports the following options:
 
 ```javascript
 {
-    // Either a console color name, a hex value (eg. #ffff00) or a Ansi color
+    // Either a css color name, a hex value (eg. #ffff00) or a Ansi color
     // code (eg. 63)
     background: "yellow", 
     
-    // Either a console color name, a hex value (eg. #ffff00) or a Ansi color
+    // Either a css color name, a hex value (eg. #ffff00) or a Ansi color
     // code (eg. 63)
     foreground: "black",
    
-    // Fill this seperator to take all the console width after rendering all
+    // Fill this separator to take all the console width after rendering all
     // segments. Only ONE segment is allowed to have this set to true.
     fill: false,
 
-    // Seperator style to use deviding this segment from the one right of it.
+    // Separator style to use deviding this segment from the one right of it.
     // Accepted values: none, normal, reversed, thin, thin-reversed
     separator: "normal"
 }
