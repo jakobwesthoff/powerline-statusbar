@@ -5,7 +5,7 @@
   "main": "Distribution/index.js",
   "scripts": {
     "prepublish": "rm -rf ./Distribution/* && node node_modules/.bin/babel -d Distribution index.js && node node_modules/.bin/babel -d Distribution/Library Library",
-    "test": "node node_modules/.bin/jasmine JASMINE_CONFIG_PATH=Specification/support/jasmine.json"
+    "test": "node node_modules/.bin/jasmine JASMINE_CONFIG_PATH=Specification/Support/jasmine.json"
   },
   "repository": {
     "type": "git",
