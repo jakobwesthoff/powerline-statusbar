@@ -6,9 +6,9 @@ import CounterSegment from "./Library/Segment/Counter";
 import PerSecondSegment from "./Library/Segment/PerSecond";
 import RateSegment from "./Library/Segment/Rate";
 
-import SolarizedTheme from "./Library/Theme/Solarized";
+import SolarizedPalette from "./Library/Palette/Solarized";
 
-var theme = {
+var palette = {
     Solarized: SolarizedTheme
 };
 
@@ -19,6 +19,6 @@ export {
     CounterSegment,
     PerSecondSegment,
     RateSegment,
-    theme
+    palette
 };
 
