@@ -27,9 +27,11 @@
     "moment": "^2.10.2"
   },
   "devDependencies": {
+    "ansi-regex": "^1.1.1",
     "babel": "^5.0.12",
     "babel-jest": "^5.0.1",
-    "jest-cli": "^0.4.0"
+    "jest-cli": "^0.4.0",
+    "strip-ansi": "^2.0.1"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
