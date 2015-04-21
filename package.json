@@ -39,6 +39,7 @@
     ],
     "moduleFileExtensions": [
       "js"
-    ]
+    ],
+    "unmockedModulePathPatterns": [".*"]
   }
 }
