@@ -1,11 +1,12 @@
 {
   "name": "powerline-statusbar",
-  "version": "0.2.0",
+  "version": "0.0.0-semantically-released",
   "description": "A powerline inspired statusbar for node cli applications",
   "main": "Distribution/index.js",
   "scripts": {
-    "prepublish": "rm -rf ./Distribution/* && node node_modules/.bin/babel -d Distribution index.js && node node_modules/.bin/babel -d Distribution/Library Library",
-    "test": "node node_modules/.bin/jest"
+    "prepublish": "rm -rf ./Distribution/* && node node_modules/.bin/babel -d Distribution index.js && node node_modules/.bin/babel -d Distribution/Library Library && semantic-release pre",
+    "test": "node node_modules/.bin/jest",
+    "postpublish": "semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "babel": "^5.0.12",
     "babel-jest": "^5.0.1",
     "jest-cli": "^0.4.0",
+    "semantic-release": "^3.0.5",
     "strip-ansi": "^2.0.1"
   },
   "jest": {
