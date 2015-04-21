@@ -65,6 +65,7 @@ export default class BaseSegment {
 
         switch(true) {
             case foreground.indexOf("#") === 0:
+            case parseInt(foreground).toString() === foreground:
                 formatter = formatter.foreground(foreground);
             break;
             default:
