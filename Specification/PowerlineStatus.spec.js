@@ -3,25 +3,7 @@ import BaseSegment from "../Library/Segment/Base";
 
 import cliwidth from "cli-width";
 
-class MockedSegment {
-    constructor(content) {
-        this._content = content;
-
-        this._mock = {};
-        this._mock.calculateNeededScreenspace = [];
-        this._mock.render = [];
-    }
-
-    calculateNeededScreenspace(nextSegment) {
-        this._mock.calculateNeededScreenspace.push(arguments);
-        return this._content.length;
-    }
-
-    render() {
-        this._mock.render.push(arguments);
-        return this._content;
-    }
-}
+import MockedSegment from "./Mock/Segment";
 
 describe("PowerlineStatus", function() {
     var statusbar;
