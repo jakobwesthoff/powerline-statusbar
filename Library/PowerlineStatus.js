@@ -1,4 +1,5 @@
 import cliwidth from "cli-width";
+cliwidth.defaultWidth = 80;
 
 export default class PowerlineStatus {
     constructor(...segments) {

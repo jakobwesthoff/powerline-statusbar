@@ -38,8 +38,11 @@
       "spec.js"
     ],
     "moduleFileExtensions": [
-      "js"
+      "js",
+      "json"
     ],
-    "unmockedModulePathPatterns": [".*"]
+    "unmockedModulePathPatterns": [
+      ".*"
+    ]
   }
 }
