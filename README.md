@@ -29,13 +29,13 @@ by different segments can be easily seen in their corresponding code.
 
 By default every segment supports the following options: 
 
-```json
+```javascript
 {
     // Either a console color name, or a hex value (eg. #ffff00)
     background: "yellow", 
     
     // Either a console color name, or a hex value (eg. #ffff00)
-    foreground: "black", // Same as background
+    foreground: "black",
    
     // Fill this seperator to take all the console width after rendering all
     // segments. Only ONE segment is allowed to have this set to true.
