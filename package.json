@@ -5,7 +5,7 @@
   "main": "Distribution/index.js",
   "scripts": {
     "prepublish": "rm -rf ./Distribution/* && node node_modules/.bin/babel -d Distribution index.js && node node_modules/.bin/babel -d Distribution/Library Library",
-    "test": "node node_modules/.bin/jasmine JASMINE_CONFIG_PATH=Specification/Support/jasmine.json"
+    "test": "node node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,17 @@
   },
   "devDependencies": {
     "babel": "^5.0.12",
-    "jasmine": "^2.2.1"
+    "babel-jest": "^5.0.1",
+    "jest-cli": "^0.4.0"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testDirectoryName": "Specification",
+    "testFileExtensions": [
+      "spec.js"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ]
   }
 }
