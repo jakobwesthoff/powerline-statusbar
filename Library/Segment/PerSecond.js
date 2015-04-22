@@ -26,7 +26,7 @@ export default class PerSecondSegment extends BaseSegment {
     }
 
     provideContent() {
-        var timeDifferenceInSeconds = moment(this.startTime).diff(new Date(), "seconds");
+        var timeDifferenceInSeconds = moment().diff(this.startTime, "seconds");
         var rate = Math.round((this.counterValue/timeDifferenceInSeconds)*10)/10;
         return `${this.options.prefix}${rate}${this.options.postfix}`;
     }
