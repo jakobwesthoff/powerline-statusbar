@@ -61,7 +61,7 @@ export default class BaseSegment {
     }
 
     createFormatter(foreground, background) {
-        return crayon.foreground(foreground.toLowerCase()).background(background.toLowerCase());
+        return crayon.foreground(foreground).background(background);
     }
 
     createContentFormatter() {
