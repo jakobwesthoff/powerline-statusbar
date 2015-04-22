@@ -9,7 +9,7 @@ import RateSegment from "./Library/Segment/Rate";
 import SolarizedPalette from "./Library/Palette/Solarized";
 
 var palette = {
-    Solarized: SolarizedTheme
+    Solarized: SolarizedPalette
 };
 
 export {
