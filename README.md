@@ -1,5 +1,8 @@
 # Powerline Statusbar
 
+[![Build Status](https://travis-ci.org/jakobwesthoff/powerline-statusbar.svg?branch=master)](https://travis-ci.org/jakobwesthoff/powerline-statusbar) [![Semver](http://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html) [![npm version](https://badge.fury.io/js/powerline-statusbar.svg)](http://badge.fury.io/js/powerline-statusbar)  [![Dependencies](https://david-dm.org/jakobwesthoff/powerline-statusbar.svg)](https://david-dm.org/jakobwesthoff/powerline-statusbar) [![Development Dependencies](https://david-dm.org/jakobwesthoff/powerline-statusbar/dev-status.svg)](https://david-dm.org/jakobwesthoff/powerline-statusbar#info=devDependencies)
+
+
 `powerline-statusbar` is a [powerline]() inspired statusbar for nodejs based
 commandline applications. It allows for easy rendering of powerline like bars,
 containing arbitrary information.
