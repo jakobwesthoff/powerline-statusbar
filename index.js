@@ -1,24 +1,10 @@
-import PowerlineStatus from "./Library/PowerlineStatus";
+export {default as PowerlineStatus} from "./Library/PowerlineStatus";
 
-import StaticSegment from "./Library/Segment/Static";
-import StartTimeSegment from "./Library/Segment/StartTime";
-import CounterSegment from "./Library/Segment/Counter";
-import PerSecondSegment from "./Library/Segment/PerSecond";
-import RateSegment from "./Library/Segment/Rate";
+export {default as StaticSegment} from "./Library/Segment/Static";
+export {default as StartTimeSegment} from "./Library/Segment/StartTime";
+export {default as CounterSegment} from "./Library/Segment/Counter";
+export {default as PerSecondSegment} from "./Library/Segment/PerSecond";
+export {default as RateSegment} from "./Library/Segment/Rate";
 
-import SolarizedPalette from "./Library/Palette/Solarized";
-
-var palette = {
-    Solarized: SolarizedPalette
-};
-
-export {
-    PowerlineStatus,
-    StaticSegment,
-    StartTimeSegment,
-    CounterSegment,
-    PerSecondSegment,
-    RateSegment,
-    palette
-};
-
+import * as Palette from "./Library/Palette";
+export {Palette as palette}
