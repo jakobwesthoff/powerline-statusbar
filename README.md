@@ -49,7 +49,9 @@ By default every segment supports the following options:
 }
 ```
 
-## Themes
+Ansi color codes have to be of type **Number** in order to work correctly.
+
+## Palettes
 
 To ease the usage within differently colored environments `Palettes` are available
 containing the ansi-codes for different color themes. They are stored inside
