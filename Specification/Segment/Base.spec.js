@@ -57,7 +57,8 @@ describe("BaseSegment", function() {
         [
             {fg: "cyan", bg: "blue"},
             {fg: "#ffff00", bg: "#beef00"},
-            {fg: "111", bg: "222"}
+            {fg: 111, bg: 222},
+            {fg: 23, bg: 42}
         ].forEach(data => {
             it(`should render output with given background and foreground color (${JSON.stringify(data)})`, function() {
                 var segment = new SimpleBaseSegment("Some content", {foreground: data.fg, background: data.bg});
